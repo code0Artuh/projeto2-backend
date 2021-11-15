@@ -44,7 +44,7 @@ router.post('/add', async (req,res) => { //add nova cidade no banco
     })
 });
 
-router.put('/edit/:id', async (req,res) => { //edita cidade no banco
+router.put('/update/:id', async (req,res) => { //edita cidade no banco
     const id = req.params.id;
     if(!id){res.status(404).json({message:"Não encontrado!"})}else
     if(!req.body.nome || !req.body.bairros || !req.body.populacao || !req.body.aniversario){
