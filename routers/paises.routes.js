@@ -45,7 +45,7 @@ router.post('/add', async (req,res) => { //add nova paise no banco
 });
 
 router.put('/edit/:id', async (req,res) => { //edita paise no banco
-    const id = req.params._id;
+    const id = req.params.id;
     if(!id){res.status(404).json({message:"Não encontrado!"})}else
     if(!req.body.nome || !req.body.idioma || !req.body.populacao || !req.body.pib){
         res.status(400).json({message:"Preencha todos os campos"});
@@ -61,7 +61,7 @@ router.put('/edit/:id', async (req,res) => { //edita paise no banco
 )});
 
 router.delete('/delete/:id', async (req,res) => { //edita paise no banco
-    const id = req.params._id;
+    const id = req.params.id;
     if(!id){res.status(404).json({message:"Não encontrado!"})};
 
     await paise.findByIdAndDelete(req.params.id).then(() => {
