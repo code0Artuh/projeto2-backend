@@ -8,7 +8,9 @@ const Conn = require("./model/conn/index"); //importando a conexao
 
 Conn(); //executa a func de conexao
 
-const port =5432; //porta do node
+app.get('/', (req,res) => {
+    res.status(200).json({message:"API Rodando"});
+});
 
 const paisesRouter = require("./routers/paises.routes");
 app.use('/paises',paisesRouter);
@@ -18,7 +20,3 @@ app.use('/cidades',cidadesRouter);
 
 const estadosRouter = require("./routers/estados.routes");
 app.use('/estados',estadosRouter);
-
-app.listen(port, () => {
-    console.log(`Servidor rodando em: http://localhost:${port}`);
-});
