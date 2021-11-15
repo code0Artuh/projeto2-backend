@@ -4,7 +4,7 @@ const paisesModel = new mongoose.Schema({ //criando nosso modelo do banco
     nome: { type: String, required: true }, // chave/ valor: tipo do valor e se é obrigatorio
     idioma: { type: String, required: true },
     populacao: { type: String, required: true },
-    pib: { type: Number, required: true },
+    pib: { type: String, required: true },
     dataCriacao: { type: Date, default: Date.now } //default, valor padrao caso nao seja passado
 });
 
