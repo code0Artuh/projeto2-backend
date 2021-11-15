@@ -8,6 +8,8 @@ const Conn = require("./model/conn/index"); //importando a conexao
 
 Conn(); //executa a func de conexao
 
+const port = process.env.PORT || 3001; //porta do node
+
 app.get('/', (req,res) => {
     res.status(200).json({message:"API Rodando"});
 });
@@ -20,3 +22,7 @@ app.use('/cidades',cidadesRouter);
 
 const estadosRouter = require("./routers/estados.routes");
 app.use('/estados',estadosRouter);
+
+app.listen(port, () => {
+    console.log(`Servidor rodando em: http://localhost:${port}`);
+});
