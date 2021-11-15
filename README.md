@@ -28,19 +28,19 @@ Tabela das rotas:
 - Paises
      - /paises/listall
      - /paises/listname/id
-     - /paises/edit/id
+     - /paises/update/id
      - /paises/delete/id
 
 - Estados
      - /estados/listall
      - /estados/listname/id
-     - /estados/edit/id
+     - /estados/update/id
      - /estados/delete/id
 
 - Cidades
      - /cidades/listall
      - /cidades/listname/id
-     - /cidades/edit/id
+     - /cidades/update/id
      - /cidades/delete/id
 
 O projeto contem uma collection para ser utilizada na extensão thunder client para realizar testes de conexão em todas as rotas.
