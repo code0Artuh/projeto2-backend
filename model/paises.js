@@ -3,8 +3,8 @@ const mongoose = require("mongoose");  //importando o mongoose
 const paisesModel = new mongoose.Schema({ //criando nosso modelo do banco
     nome: { type: String, required: true }, // chave/ valor: tipo do valor e se é obrigatorio
     idioma: { type: String, required: true },
-    populacao: { type: Number },
-    pib: { type: Number },
+    populacao: { type: String, required: true },
+    pib: { type: Number, required: true },
     dataCriacao: { type: Date, default: Date.now } //default, valor padrao caso nao seja passado
 });
 
