@@ -18,7 +18,7 @@ router.get('/listall', async (req,res) => {
 
 router.get('/listname/:nome', async (req,res) => {
     const id = req.params.nome;  //recebendo nome por parametro
-    await cidade.findOne({ nome:id }).then((cidades) => { //findOne retorna o primeiro que der match com o item passado
+    await cidade.find({ nome:id }).then((cidades) => { //findOne retorna o primeiro que der match com o item passado
         console.log(cidades);
         if(cidades == null){ //validando se retorna null 
             res.status(404).json({message: "nao foi encontrado"});
