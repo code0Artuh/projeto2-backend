@@ -16,9 +16,9 @@ router.get('/listall', async (req,res) => {
     });
 });
 
-router.get('/listname/:id', async (req,res) => {
-    const id = req.params.id;  //recebendo nome por parametro
-    await cidade.findOne({ _id:id }).then((cidades) => { //findOne retorna o primeiro que der match com o item passado
+router.get('/listname/:nome', async (req,res) => {
+    const id = req.params.nome;  //recebendo nome por parametro
+    await cidade.findOne({ nome:id }).then((cidades) => { //findOne retorna o primeiro que der match com o item passado
         console.log(cidades);
         if(cidades == null){ //validando se retorna null 
             res.status(404).json({message: "nao foi encontrado"});
