@@ -18,7 +18,7 @@ router.get('/listall', async (req,res) => {
 
 router.get('/listname/:nome', async (req,res) => {
     const id = req.params.nome;  //recebendo nome por parametro
-    await estado.findOne({ nome:id }).then((estados) => { //findOne retorna o primeiro que der match com o item passado
+    await estado.find({ nome:id }).then((estados) => { //findOne retorna o primeiro que der match com o item passado
         console.log(estados);
         if(estados == null){ //validando se retorna null 
             res.status(404).json({message: "nao foi encontrado"});
